@@ -8,17 +8,8 @@ import {HEROES} from '../mock-heroes';
     styleUrls: ['./heroes.component.css']
 })
 export class HeroesComponent implements OnInit {
-
-    hero: Hero = {
-        id: 1,
-        name: 'Windstorm'
-    };
-
     heroes = HEROES;
-
     selectedHero: Hero;
-
-    isSelected = false;
 
     constructor() {
 
@@ -30,16 +21,6 @@ export class HeroesComponent implements OnInit {
 
     onSelect(hero: Hero): void {
         this.selectedHero = hero;
-    }
-
-    editEntry(hero: Hero, newName: string): void {
-        for (const entry in this.heroes) {
-
-            if (this.heroes[entry].id === hero.id) {
-                // tslint:disable-next-line:radix
-                console.log('It was saved!');
-            }
-        }
     }
 
     deleteEntry(id): void {
