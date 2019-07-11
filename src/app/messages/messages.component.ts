@@ -14,4 +14,9 @@ export class MessagesComponent implements OnInit {
     ngOnInit() {
     }
 
+    /** Log a HeroService message with the MessageService */
+    private log(message: string) {
+        this.messageService.add(`HeroService: ${message}`);
+    }
+
 }
